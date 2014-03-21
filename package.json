@@ -1,0 +1,27 @@
+{
+  "name": "striderbot",
+  "description": "Used to proxy Strider webhook output into Slack webhook input",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:microadam/striderbot"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint-full-path/index.js",
+    "jscs": "./node_modules/.bin/jscs .",
+    "pretest": "npm run-script lint && npm run-script jscs",
+    "test": "echo 'need tests'"
+  },
+  "dependencies": {
+    "express": "^3.5.0",
+    "request": "^2.34.0"
+  },
+  "devDependencies": {
+    "jscs": "~1.3",
+    "jshint": "~2.4.1",
+    "jshint-full-path": "~1.1.1"
+  }
+}
