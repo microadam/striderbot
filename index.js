@@ -16,7 +16,7 @@ app.post('/:project', function(req, res) {
     , branch = req.body.payload.branch
     , repoUrl = process.env.STRIDER_URL + project
     , success = req.body.payload['test_exitcode'] === 0
-    , messageSuffix = ' on ' + branch + ' - <' + repoUrl + '>'
+    , messageSuffix = ' on ' + branch + ' - <' + repoUrl + '|' + project + '>'
     , messagePrefix = 'SUCCESS - Tests have passed successfuly'
 
   if (!success) {
