@@ -10,6 +10,8 @@ app.post('/:project', function(req, res) {
 
   console.log('Payload received:', req.body)
 
+  req.body.payload = JSON.parse(req.body.payload)
+
   var project = req.body.payload.project
     , branch = req.body.payload.branch
     , repoUrl = process.env.STRIDER_URL + project
