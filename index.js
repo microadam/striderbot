@@ -21,6 +21,7 @@ app.post('/:project', function(req, res) {
 
   if (!success) {
     messagePrefix = 'FAILURE - Tests have failed'
+    messageSuffix += ' @channel'
   }
 
   var data =
@@ -31,6 +32,8 @@ app.post('/:project', function(req, res) {
         }
     , token = process.env.SLACK_TOKEN
     , url = 'https://clock.slack.com/services/hooks/incoming-webhook?token=' + token
+
+  data['link_names'] = 1
 
   request.post(
     { url: url
